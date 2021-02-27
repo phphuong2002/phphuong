@@ -5,7 +5,6 @@ public class Student {
     public float pointPractice;
 
     public Student() {
-        System.out.println("This is a constructor");
     }
 
     public Student(int studentID, String name, float pointTheory, float pointPractice) {
@@ -15,15 +14,11 @@ public class Student {
         this.pointPractice = pointPractice;
     }
 
-    public void average(float score) {
-        score = (pointTheory + pointPractice) /2;
-        System.out.println("Average score: " + score);
+    public float average() {
+        return (pointPractice + pointTheory) / 2;
     }
 
     public void display() {
-        System.out.println("Student ID: " + studentID);
-        System.out.println("Name: " + name);
-        System.out.println("Theorical point: " + pointTheory);
-        System.out.println("Practical point: " + pointPractice);
+        System.out.printf("%3d\t %-15s %8.2f %18.2f %19.2f \n", studentID, name, pointTheory, pointPractice, average());
     }
 }
